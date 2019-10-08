@@ -1,0 +1,15 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+<beans>
+    <bean id="golden" class="org.cfj.myspring.integral.GoldenIntegralProcessorImpl"></bean>
+    <bean id="platinum" class="org.cfj.myspring.integral.PlatinumIntegralProcessorImpl"></bean>
+    <!--用Setter注入方式-->
+    <bean id="integralservice" class="org.cfj.myspring.service.IntegralServiceImpl">
+        <property  name="golden" >
+            <ref bean="golden"></ref>
+        </property>
+    </bean>
+</beans>
+</beans>
